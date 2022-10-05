@@ -164,6 +164,34 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+      let quantity = document.getElementById("quantity").value;
+      document.getElementById("quantity_summary").innerText ='Oddałeś '+ quantity + ' worki';
+
+
+
+      let street = document.getElementById("street").value;
+      document.getElementById("street_summary").innerText = street;
+
+      let city = document.getElementById("city").value;
+      document.getElementById("city_summary").innerText = city;
+
+      let zipCode = document.getElementById("zipCode").value;
+      document.getElementById("zipCode_summary").innerText = zipCode;
+
+      let dataId = document.getElementById("dataId").value;
+      document.getElementById("dataId_summary").innerText = dataId;
+
+      let timeId = document.getElementById("timeId").value;
+      document.getElementById("timeId_summary").innerText = timeId;
+
+      let textId = document.getElementById("textId").value;
+      document.getElementById("textId_summary").innerText = textId;
+
+      let phoneNumber = document.getElementById("phoneNumber").value;
+      document.getElementById("phoneNumber_summary").innerText = phoneNumber;
+
+      let institutionName = document.querySelector("input[type='radio']:checked")
+      document.getElementById("institution_summary").innerText = institutionName.getAttribute("rl");
     }
 
   }

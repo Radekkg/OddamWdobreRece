@@ -2,6 +2,7 @@ package pl.coderslab.charity.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.coderslab.charity.model.Donation;
 import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.repository.DonationRepository;
 
@@ -16,11 +17,15 @@ public class DonationService {
         this.donationRepository = donationRepository;
     }
 
-    public Integer getAllDonationBag(){
+    public Integer getAllDonationBag() {
         return donationRepository.quantityOfBags();
     }
 
-    public Integer getAllDonation(){
-        return  donationRepository.quantityOfDonation();
+    public Integer getAllDonation() {
+        return donationRepository.quantityOfDonation();
+    }
+
+    public void save(Donation donation) {
+        donationRepository.save(donation);
     }
 }

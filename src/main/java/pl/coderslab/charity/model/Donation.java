@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -25,14 +26,18 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Size(min = 1)
+    //TODO di srawdzenia validacja min max
+    //@Min()
     private Integer quantity;
 
     @ManyToMany(fetch = FetchType.LAZY)
     List<Category> categories;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    Institution institutions;
+    Institution institution;
+
+    @Length(min = 9)
+    private String phone;
 
     @Length(min = 2)
     private String street;
